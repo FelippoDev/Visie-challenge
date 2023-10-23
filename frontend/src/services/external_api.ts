@@ -31,7 +31,7 @@ export const fetchPeopleData = async (): Promise<Person[]> => {
   }
 };
 
-export const deletePerson = async (id_pessoa: string): Promise<Person[]> => {
+export const deletePerson = async (id_pessoa: number): Promise<Person[]> => {
   try {
     const response = await api.delete(`people/${id_pessoa}`);
     console.log(response)

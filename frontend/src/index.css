@@ -63,6 +63,20 @@ input[type="submit"]{
   transition: border-color 0.25s;
 }
 
+form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 30%;
+  margin-top: 5%;
+  width: 30%;
+}
+
+input {
+  padding: 12px;
+  margin: 5px;
+}
+
 input[type="submit"]:hover {
   background-color: rgb(76, 141, 171)
 }

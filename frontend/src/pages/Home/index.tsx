@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { IPeople } from "./People.interface";
-import PeopleTable from "./PeopleTable/index";
+import PeopleTable from "./PersonList/index";
 import { createPerson, fetchPeopleData } from "../../services/external_api";
 
 export default function HomePage() {
@@ -46,7 +46,7 @@ export default function HomePage() {
       <section className="section-content">
         <h2>Tabela Pessoas</h2>
         <button onClick={() => createPerson()} className="create-btn">
-          adicionar pessoa
+          adicionar novo registro
         </button>
         <PeopleTable people={peopleList} />
       </section>

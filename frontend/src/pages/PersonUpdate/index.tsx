@@ -11,9 +11,12 @@ export default function PersonUpdate() {
 
   async function getData() {
     const person: IPeople = await getPerson(person_id);
-    console.log(person);
     setPersonData(person);
     setLoading(false);
+  }
+
+  async function cancelUpdate() {
+    navegate("/");
   }
 
   async function submitForm(e: any) {
@@ -49,48 +52,45 @@ export default function PersonUpdate() {
     <div>
       <form onSubmit={(e) => submitForm(e)} className="form">
         <input
-          type="nome"
           name="nome"
           className="input-person"
           placeholder="Name"
           defaultValue={personData.nome}
         />
         <input
-          type="rg"
           name="rg"
           className="input-person"
           placeholder="RG"
           defaultValue={personData.rg}
         />
         <input
-          type="cpf"
           name="cpf"
           className="input-person"
           placeholder="CPF"
           defaultValue={personData.cpf}
         />
         <input
-          type="data_nascimento"
+          type="date"
           name="data_nascimento"
           className="input-person"
           placeholder="Data de Nascimento"
           defaultValue={personData.data_nascimento}
         />
         <input
-          type="data_admissao"
+          type="date"
           name="data_admissao"
           className="input-person"
           placeholder="Data de Admissão"
           defaultValue={personData.data_admissao}
         />
         <input
-          type="funcao"
           name="funcao"
           className="input-person"
           placeholder="Função"
           defaultValue={personData.funcao}
         />
         <input type="submit" value="Atualizar" className="person-form" />
+        <button className="btn-input" onClick={() => cancelUpdate()}>Cancelar</button>
       </form>
     </div>
   );
