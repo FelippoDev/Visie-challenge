@@ -1,0 +1,55 @@
+version: '3.9'
+
+services:
+  app:
+    container_name: backend_fastapi
+    networks:
+      - challenge_visie
+    restart: always
+    build: ./backend
+    ports:
+      - "8000:8000"
+    expose:
+      - "8000"
+    volumes:
+      - ./backend:/usr/src/api
+    command: >
+      sh -c "uvicorn src.main:app --reload --port 8000 --host 0.0.0.0"
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - db
+
+  db:
+    container_name: backend_db_visie
+    image: postgres
+    networks:
+      - challenge_visie
+    restart: always
+    ports:
+      - "5442:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    expose:
+      - "5442"
+    command: -p 5442
+
+  frontend:
+    container_name: frontend_
+    networks:
+      - challenge_visie
+    build:
+      context: ./frontend
+    volumes:
+      - ./frontend:/usr/src/frontend
+      - /usr/src/frontend/node_modules
+    ports:
+      - "5173:5173"
+    expose:
+      - "5173"
+
+networks:
+  challenge_visie:
+    driver: bridge
