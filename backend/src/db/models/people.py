@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Date, String
 from sqlalchemy.dialects.postgresql import SMALLINT
+
 from src.db.db_setup import Base
 
 class Person(Base):
