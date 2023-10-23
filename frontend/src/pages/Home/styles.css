@@ -1,0 +1,11 @@
+.section-content {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 15px;
+}
+
+.create-btn {
+    display: flex;
+    justify-content: end;
+    align-items: flex-start;
+}
