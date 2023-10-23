@@ -1,5 +1,5 @@
 from datetime import date
-from typing import Optional, List
+from typing import Optional
 from pydantic import BaseModel
 
 class CreatePersonSchema(BaseModel):
@@ -16,10 +16,3 @@ class CreatePersonSchema(BaseModel):
 
 class PersonSchema(CreatePersonSchema):
     id_pessoa: int
-    
-
-# class PeopleSchema(BaseModel):
-#     people: List[PersonSchema]
-
-#     class Config:
-#         orm_mode = True

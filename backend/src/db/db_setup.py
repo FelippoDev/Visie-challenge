@@ -13,7 +13,7 @@ PORT = config("PORT")
 DB_PASSWORD = config("DB_PASSWORD")
 DB_NAME = config("DB_NAME")
 
-SQLALCHEMY_DATABASE_URL = F'postgresql://{DB_USER}:{DB_PASSWORD}@{HOST}:{PORT}/{DB_NAME}'
+SQLALCHEMY_DATABASE_URL = f'postgresql://{DB_USER}:{DB_PASSWORD}@{HOST}:{PORT}/{DB_NAME}'
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
