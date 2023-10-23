@@ -23,7 +23,6 @@ interface Person {
 export const fetchPeopleData = async (): Promise<Person[]> => {
   try {
     const response = await api.get(`people`);
-    console.log(response)
     return response.data as Person[];
   } catch (error) {
     console.log(error.response)
@@ -34,7 +33,6 @@ export const fetchPeopleData = async (): Promise<Person[]> => {
 export const deletePerson = async (id_pessoa: number): Promise<Person[]> => {
   try {
     const response = await api.delete(`people/${id_pessoa}`);
-    console.log(response)
     return response.data as Person[];
   } catch (error) {
     console.log(error.response)
@@ -45,7 +43,6 @@ export const deletePerson = async (id_pessoa: number): Promise<Person[]> => {
 export const updatePerson = async (person: IPeople): Promise<Person[]> => {
   try {
     const response = await api.put(`people/${person.id_pessoa}`, person);
-    console.log(response)
     return response.data as Person[];
   } catch (error) {
     console.log(error.response)
@@ -56,7 +53,6 @@ export const updatePerson = async (person: IPeople): Promise<Person[]> => {
 export const getPerson = async (id_pessoa: number): Promise<Person> => {
   try {
     const response = await api.get(`people/${id_pessoa}`);
-    console.log(response)
     return response.data as Person;
   } catch (error: any) {
     console.log(error.response)
@@ -67,7 +63,6 @@ export const getPerson = async (id_pessoa: number): Promise<Person> => {
 export const createPerson = async (person: IPersonCreate): Promise<Person[]> => {
   try {
     const response = await api.post(`people`, person);
-    console.log(response)
     return response.data as Person[];
   } catch (error) {
     console.log(error.response)

@@ -20,7 +20,6 @@ export default function HomePage() {
   }
 
   async function createPerson() {
-    console.log("BUTTON CLICKED")
     navegate("/create");
   }
 
